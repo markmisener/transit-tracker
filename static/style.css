@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+#form {
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 0 1pt 1pt lightgrey;
+  padding: 1%;
+  top: 15px;
+  left: 15px;
+  z-index: 1;
+  text-align: center;
+}
