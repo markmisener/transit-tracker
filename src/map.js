@@ -58,10 +58,11 @@ map.on('load', () => {
   // update now
   updateSource();
 
-  // update every intervalSeconds
-  setInterval(function() {
-    updateSource();
-  }, INTERVAL_MILLISECONDS);
+  // pause updating until HTTPS issue is resolved
+  // // update every intervalSeconds
+  // setInterval(function() {
+  //   updateSource();
+  // }, INTERVAL_MILLISECONDS);
 });
 
 function updateSource() {
