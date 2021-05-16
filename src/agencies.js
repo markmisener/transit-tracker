@@ -1,6 +1,4 @@
-const REDIRECT_SERVICE = 'https://traffic-cop.herokuapp.com/http-redirect';
-const XMLFEED = 'http://webservices.nextbus.com/service/publicXMLFeed?command=agencyList'
-const URL = `${REDIRECT_SERVICE}?url=${XMLFEED}`
+const URL = `${REDIRECT_SERVICE}?url=http://webservices.nextbus.com/service/publicXMLFeed?command=agencyList`
 
 fetch(URL)
   .then(response => response.text())
