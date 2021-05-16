@@ -1,3 +1,4 @@
+const REDIRECT_SERVICE = 'https://traffic-cop.herokuapp.com/http-redirect';
 const XMLFEED = 'http://webservices.nextbus.com/service/publicXMLFeed';
 const SOURCE_NAME = 'nextbus';
 const LAYER_NAME = 'bus-locations';
@@ -58,16 +59,15 @@ map.on('load', () => {
   // update now
   updateSource();
 
-  // pause updating until HTTPS issue is resolved
-  // // update every intervalSeconds
-  // setInterval(function() {
-  //   updateSource();
-  // }, INTERVAL_MILLISECONDS);
+  // update every intervalSeconds
+  setInterval(function() {
+    updateSource();
+  }, INTERVAL_MILLISECONDS);
 });
 
 function updateSource() {
   let agency = document.querySelector('#agency').value;
-  let url = `${XMLFEED}?command=vehicleLocations&a=${agency}&t=0`
+  let url = `${REDIRECT_SERVICE}?url=${XMLFEED}?command=vehicleLocations&a=${agency}&t=0`
   fetch(url)
     .then(response => response.text())
     .then(str => (new window.DOMParser()).parseFromString(str, "text/xml"))
