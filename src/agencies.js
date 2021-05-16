@@ -1,4 +1,4 @@
-const url = "https://traffic-cop.herokuapp.com/https-redirect?url=http://webservices.nextbus.com/service/publicXMLFeed?command=agencyList";
+const url = "https://traffic-cop.herokuapp.com/redirect?url=http://webservices.nextbus.com/service/publicXMLFeed?command=agencyList";
 
 console.log(url);
 fetch(url, {
