@@ -1,7 +1,4 @@
-const REDIRECT_SERVICE = 'https://traffic-cop.herokuapp.com/https-redirect';
-const URL = `${REDIRECT_SERVICE}?url=http://webservices.nextbus.com/service/publicXMLFeed?command=agencyList`
-
-fetch(URL, {
+fetch("https://traffic-cop.herokuapp.com/https-redirect?url=http://webservices.nextbus.com/service/publicXMLFeed?command=agencyList", {
     mode: "no-cors"
   })
   .then(response => response.text())
