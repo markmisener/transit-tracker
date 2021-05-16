@@ -1,4 +1,4 @@
-const REDIRECT_SERVICE = 'https://traffic-cop.herokuapp.com/http-redirect';
+const REDIRECT_SERVICE = 'https://traffic-cop.herokuapp.com/https-redirect';
 const XMLFEED = 'http://webservices.nextbus.com/service/publicXMLFeed';
 const SOURCE_NAME = 'nextbus';
 const LAYER_NAME = 'bus-locations';
