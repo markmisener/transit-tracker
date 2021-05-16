@@ -59,11 +59,11 @@ map.on('load', () => {
   // update now
   updateSource();
 
-  // update every intervalSeconds
-  setInterval(function() {
-    updateSource();
-  }, INTERVAL_MILLISECONDS);
-});
+//   // update every intervalSeconds
+//   setInterval(function() {
+//     updateSource();
+//   }, INTERVAL_MILLISECONDS);
+// });
 
 function updateSource() {
   let agency = document.querySelector('#agency').value;
