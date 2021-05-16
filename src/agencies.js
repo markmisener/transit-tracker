@@ -1,6 +1,7 @@
 const url = "https://traffic-cop.herokuapp.com/https-redirect?url=http://webservices.nextbus.com/service/publicXMLFeed?command=agencyList";
 
-fetch(encodeURIComponent(url), {
+console.log(url);
+fetch(url, {
     mode: "no-cors"
   })
   .then(response => response.text())
