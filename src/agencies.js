@@ -1,6 +1,8 @@
 const URL = `${REDIRECT_SERVICE}?url=http://webservices.nextbus.com/service/publicXMLFeed?command=agencyList`
 
-fetch(URL)
+fetch(URL, {
+    mode: "no-cors"
+  })
   .then(response => response.text())
   .then(str => (new window.DOMParser()).parseFromString(str, "text/xml"))
   .then(xmlDoc => xmlDoc.getElementsByTagName("agency"))
@@ -22,7 +24,7 @@ fetch(URL)
     let agencySelect = document.getElementById('agency');
 
     let existingOptions = [];
-    for (i = 0; i < agencySelect.options.length; i++){
+    for (i = 0; i < agencySelect.options.length; i++) {
       existingOptions.push(agencySelect.options[i].value);
     }
 

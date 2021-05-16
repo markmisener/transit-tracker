@@ -59,16 +59,18 @@ map.on('load', () => {
   // update now
   updateSource();
 
-//   // update every intervalSeconds
-//   setInterval(function() {
-//     updateSource();
-//   }, INTERVAL_MILLISECONDS);
-// });
+  //   // update every intervalSeconds
+  //   setInterval(function() {
+  //     updateSource();
+  //   }, INTERVAL_MILLISECONDS);
+});
 
 function updateSource() {
   let agency = document.querySelector('#agency').value;
   let url = `${REDIRECT_SERVICE}?url=${XMLFEED}?command=vehicleLocations&a=${agency}&t=0`
-  fetch(url)
+  fetch(url, {
+      mode: "no-cors"
+    })
     .then(response => response.text())
     .then(str => (new window.DOMParser()).parseFromString(str, "text/xml"))
     .then(xmlDoc => xmlDoc.getElementsByTagName("vehicle"))
@@ -105,7 +107,9 @@ function updateSource() {
         }
         map.getSource(SOURCE_NAME).setData(featureCollection);
         let bounds = turf.bbox(featureCollection);
-        map.fitBounds(bounds, {padding: 20});
+        map.fitBounds(bounds, {
+          padding: 20
+        });
       } else {
         alert(`No active vehicles found for ${agency}.`)
       }
