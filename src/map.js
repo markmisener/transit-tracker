@@ -72,7 +72,11 @@ function updateSource() {
   fetch(url, {
       mode: "no-cors"
     })
-    .then(response => response.text())
+    .then(response => {
+      let content = response.text();
+      console.log(content);
+      return content
+    )
     .then(str => (new window.DOMParser()).parseFromString(str, "text/xml"))
     .then(xmlDoc => xmlDoc.getElementsByTagName("vehicle"))
     .then(xmlFeatures => {

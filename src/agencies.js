@@ -4,7 +4,11 @@ console.log(url);
 fetch(url, {
     mode: "no-cors"
   })
-  .then(response => response.text())
+  .then(response => {
+    let content = response.text();
+    console.log(content);
+    return content
+  })
   .then(str => (new window.DOMParser()).parseFromString(str, "text/xml"))
   .then(xmlDoc => xmlDoc.getElementsByTagName("agency"))
   .then(xmlFeatures => {
