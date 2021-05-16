@@ -67,7 +67,7 @@ map.on('load', () => {
 
 function updateSource() {
   let agency = document.querySelector('#agency').value;
-  let url = `${REDIRECT_SERVICE}?url=${XMLFEED}?command=vehicleLocations&a=${agency}&t=0`
+  let url = `${REDIRECT_SERVICE}?url=${XMLFEED}&command=vehicleLocations&a=${agency}&t=0`
   console.log(url);
   fetch(url, {
       mode: "no-cors"
