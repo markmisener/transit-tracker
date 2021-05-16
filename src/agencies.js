@@ -1,7 +1,11 @@
 const url = "https://traffic-cop.herokuapp.com/redirect?url=http://webservices.nextbus.com/service/publicXMLFeed&command=agencyList";
 
 console.log(url);
-fetch(url)
+fetch(url, {
+    "headers": {
+      "Access-Control-Allow-Origin": "*"
+    }
+  })
   .then(response => {
     let content = response.text();
     console.log(content);

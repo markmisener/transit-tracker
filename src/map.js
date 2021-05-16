@@ -69,7 +69,11 @@ function updateSource() {
   let agency = document.querySelector('#agency').value;
   let url = `${REDIRECT_SERVICE}?url=${XMLFEED}&command=vehicleLocations&a=${agency}&t=0`
   console.log(url);
-  fetch(url)
+  fetch(url, {
+      "headers": {
+        "Access-Control-Allow-Origin": "*"
+      }
+    })
     .then(response => {
       let content = response.text();
       console.log(content);
