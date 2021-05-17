@@ -74,7 +74,7 @@ function updateSource() {
       let content = response.text();
       console.log(content);
       return content
-    )
+    })
     .then(str => (new window.DOMParser()).parseFromString(str, "text/xml"))
     .then(xmlDoc => xmlDoc.getElementsByTagName("vehicle"))
     .then(xmlFeatures => {
