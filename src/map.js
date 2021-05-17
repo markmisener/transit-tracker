@@ -4,6 +4,7 @@ const SOURCE_NAME = 'nextbus';
 const LAYER_NAME = 'bus-locations';
 const INTERVAL_SECONDS = 10;
 const INTERVAL_MILLISECONDS = INTERVAL_SECONDS * 1000;
+let current_agency = document.querySelector('#agency').value;
 
 mapboxgl.accessToken = 'pk.eyJ1IjoibW1pc2VuZXIiLCJhIjoiY2tpbnNodXAyMTYzaDJ5cnh2MzhhZTdrOSJ9.2kqiWW_ezo14wsaONE-MjQ';
 
@@ -104,13 +105,17 @@ function updateSource() {
           type: 'FeatureCollection',
           features: features
         }
-        map.getSource(SOURCE_NAME).setData(featureCollection);
-        let bounds = turf.bbox(featureCollection);
-        map.fitBounds(bounds, {
-          padding: 20
-        });
+        if (current_agency !== agency) {
+          map.getSource(SOURCE_NAME).setData(featureCollection);
+          let bounds = turf.bbox(featureCollection);
+          map.fitBounds(bounds, {
+            padding: 20
+          });
+        }
       } else {
         alert(`No active vehicles found for ${agency}.`)
       }
+
+      current_agency = agency;
     });
 }
