@@ -105,8 +105,9 @@ function updateSource() {
           type: 'FeatureCollection',
           features: features
         }
+        map.getSource(SOURCE_NAME).setData(featureCollection);
+
         if (current_agency !== agency) {
-          map.getSource(SOURCE_NAME).setData(featureCollection);
           let bounds = turf.bbox(featureCollection);
           map.fitBounds(bounds, {
             padding: 20
