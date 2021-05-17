@@ -1,11 +1,7 @@
 const url = "https://traffic-cop.herokuapp.com/redirect?url=http://webservices.nextbus.com/service/publicXMLFeed&command=agencyList";
 
 fetch(url)
-  .then(response => {
-    let content = response.text();
-    console.log(content);
-    return content
-  })
+  .then(response => response.text())
   .then(str => (new window.DOMParser()).parseFromString(str, "text/xml"))
   .then(xmlDoc => xmlDoc.getElementsByTagName("agency"))
   .then(xmlFeatures => {
