@@ -8,13 +8,11 @@ fetch(url)
     let features = [];
     for (i = 0; i < xmlFeatures.length; i++) {
       let feature = xmlFeatures[i];
-      if (feature.getAttribute("regionTitle") === "California-Northern") {
-        let parsedFeature = {
-          "tag": feature.getAttribute("tag"),
-          "title": feature.getAttribute("title")
-        }
-        features.push(parsedFeature)
+      let parsedFeature = {
+        "tag": feature.getAttribute("tag"),
+        "title": feature.getAttribute("title")
       }
+      features.push(parsedFeature)
     }
     return features
   })
