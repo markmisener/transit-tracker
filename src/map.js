@@ -1,5 +1,5 @@
 const REDIRECT_SERVICE = 'https://traffic-cop.herokuapp.com/redirect';
-const XMLFEED = 'http://webservices.nextbus.com/service/publicXMLFeed';
+const XMLFEED = 'https://retro.umoiq.com/service/publicXMLFeed';
 const SOURCE_NAME = 'nextbus';
 const LAYER_NAME = 'bus-locations';
 const INTERVAL_SECONDS = 10;
