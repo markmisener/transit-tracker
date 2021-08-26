@@ -1,6 +1,6 @@
-const url = "https://traffic-cop.herokuapp.com/redirect?url=http://webservices.nextbus.com/service/publicXMLFeed&command=agencyList";
+const URL = "https://traffic-cop.herokuapp.com/redirect?url=https://retro.umoiq.com/service/publicXMLFeed&command=agencyList";
 
-fetch(url)
+fetch(URL)
   .then(response => response.text())
   .then(str => (new window.DOMParser()).parseFromString(str, "text/xml"))
   .then(xmlDoc => xmlDoc.getElementsByTagName("agency"))
